@@ -1,4 +1,13 @@
-sheetID = "1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
+var sheetID = "1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
+
+var request = {};
+var pairs = window.location.search.substring(1).split('&');
+for (var i = 0; i < pairs.length; i++) {
+  var pair = pairs[i].split('=');
+  request[pair[0]] = pair[1];
+}
+alert(request);
+
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
