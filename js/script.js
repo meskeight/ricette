@@ -6,7 +6,7 @@ for (var i = 0; i < pairs.length; i++) {
   var pair = pairs[i].split('=');
   request[pair[0]] = pair[1];
 }
-alert(window.location.search);
+alert(request["name"]);
 
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
