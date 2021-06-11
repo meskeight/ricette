@@ -1,7 +1,7 @@
-sheetID ="1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
+sheetID = "1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
-  if (this.readyState == 4 && this.status == 200) {
+  if (this.readyState === 4 && this.status === 200) {
     let data = JSON.parse(this.responseText).feed.entry;
 
     let i;
@@ -12,15 +12,9 @@ xmlhttp.onreadystatechange = function () {
 
       document.getElementById("demo").innerHTML +=
         "<tr>" +
-        "<td>" +
-        name +
-        "</td>" +
-        "<td>" +
-        age +
-        "</td>" +
-        "<td>" +
-        email +
-        "</td>" +
+        '<td><a href="?name='+name+'">'+name+'</a></td>'+
+        "<td>"+age+"</td>"+
+        "<td>"+email+"</td>"+
         "</tr>";
     }
   }
