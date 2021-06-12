@@ -6,7 +6,7 @@ for (var i = 0; i < pairs.length; i++) {
   var pair = pairs[i].split('=');
   request[pair[0]] = pair[1];
 }
-alert(request["name"]);
+// alert(request["name"]);
 
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
@@ -15,15 +15,17 @@ xmlhttp.onreadystatechange = function () {
 
     let i;
     for (i = 0; i < data.length; i++) {
-      let name = data[i]["gsx$_cn6ca"]["$t"];
-      let age = data[i]["gsx$_cokwr"]["$t"];
-      let email = data[i]["gsx$_cpzh4"]["$t"];
+      let r_id = data[i]["gsx$id"]["$t"];
+      let r_titolo = data[i]["gsx$titolo"]["$t"];
+      let r_difficolta = data[i]["gsx$difficolta"]["$t"];
+      let r_tcottura = data[i]["gsx$tcottura"]["$t"];
+      let r_preparazione = data[i]["gsx$preparazione"]["$t"];
 
       document.getElementById("demo").innerHTML +=
         "<tr>" +
-        '<td><a href="?name='+name+'">'+name+'</a></td>'+
-        "<td>"+age+"</td>"+
-        "<td>"+email+"</td>"+
+        '<td><a href="ricetta.html?id='+i+'">'+r_titolo+'</a></td>'+
+        "<td>"+r_difficolta+"</td>"+
+        "<td>"+r_tcottura+"</td>"+
         "</tr>";
     }
   }
