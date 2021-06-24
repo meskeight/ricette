@@ -20,13 +20,25 @@ function difficolta(n) {
   return str;
 }
 
-function ingredienti(str_arr) {
+function list(str_arr) {
   var arr = str_arr.split("\n");
-  var stru = "";
+  var str = "";
   for (var i = 0; i < arr.length; i++) {
-    stru += "<li>" + arr[i] + "</li>";
+    str += "<li>" + arr[i] + "</li>";
   }
-  return stru;
+  return str;
+}
+
+function time_s(hm) {
+  var arr = hm.split(".");
+  arr = [Number(arr[0]), Number(arr[1])];
+  var str = "";
+  if (arr[0] === 1) str += arr[0] + " ora";
+  else if (arr[0] > 1) str += arr[0] + " ore";
+  if (arr[0] > 0) str += " ";
+  if (arr[1] === 1) str += arr[1] + " minuto";
+  else str += arr[1] + " minuti";
+  return str;
 }
 
 xmlhttp.onreadystatechange = function () {
@@ -38,9 +50,10 @@ xmlhttp.onreadystatechange = function () {
     document.getElementById("difficolta").innerHTML = difficolta(
       data[_get]["gsx$difficolta"]["$t"]
     );
-    document.getElementById("tcottura").innerHTML =
-      data[_get]["gsx$tcottura"]["$t"];
-    document.getElementById("ingredienti").innerHTML = ingredienti(
+    document.getElementById("tcottura").innerHTML = time_s(
+      data[_get]["gsx$tcottura"]["$t"]
+    );
+    document.getElementById("ingredienti").innerHTML = list(
       data[_get]["gsx$ingredienti"]["$t"]
     );
     document.getElementById("preparazione").innerHTML =

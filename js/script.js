@@ -7,7 +7,10 @@ for (var i = 0; i < pairs.length; i++) {
   var pair = pairs[i].split("=");
   request[pair[0]] = pair[1];
 }
-// alert(request["name"]);
+
+function time(hm) {
+  return hm.replace(".", ":");
+}
 
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
@@ -36,7 +39,7 @@ xmlhttp.onreadystatechange = function () {
         r_difficolta +
         "</td>" +
         "<td>" +
-        r_tcottura +
+        time(r_tcottura) +
         "</td>" +
         "</tr>";
     }
