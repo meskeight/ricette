@@ -20,6 +20,15 @@ function difficolta(n) {
   return str;
 }
 
+function ingredienti(str_arr) {
+  var arr = str_arr.split("\n");
+  var stru = "";
+  for (var i = 0; i < arr.length; i++) {
+    stru += "<li>" + arr[i] + "</li>";
+  }
+  return stru;
+}
+
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let data = JSON.parse(this.responseText).feed.entry;
@@ -31,6 +40,9 @@ xmlhttp.onreadystatechange = function () {
     );
     document.getElementById("tcottura").innerHTML =
       data[_get]["gsx$tcottura"]["$t"];
+    document.getElementById("ingredienti").innerHTML = ingredienti(
+      data[_get]["gsx$ingredienti"]["$t"]
+    );
     document.getElementById("preparazione").innerHTML =
       data[_get]["gsx$preparazione"]["$t"];
   }
