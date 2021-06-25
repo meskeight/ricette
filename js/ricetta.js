@@ -1,38 +1,38 @@
 //https://spreadsheets.google.com/feeds/list/1dH6QCXDm7_Jw1UHc0KAmgklKTz-F_lDgDtld3i9eCPA/od6/public/values?alt=json
 //1dH6QCXDm7_Jw1UHc0KAmgklKTz-F_lDgDtld3i9eCPA
-var sheetID = "1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
+let sheetID = "1CY2e1Dn9wi4v37cAoJyhX2lhgBXVtUC4BUaytk0aDuk";
 
-var request = {};
-var pairs = window.location.search.substring(1).split("&");
-for (var i = 0; i < pairs.length; i++) {
-  var pair = pairs[i].split("=");
+let request = {};
+let pairs = window.location.search.substring(1).split("&");
+for (let i = 0; i < pairs.length; i++) {
+  let pair = pairs[i].split("=");
   request[pair[0]] = pair[1];
 }
 
 let xmlhttp = new XMLHttpRequest();
-var _get = request["id"];
+let _get = request["id"];
 
 function difficolta(n) {
-  var str = "";
-  for (var i = 0; i < n; i++) {
+  let str = "";
+  for (let i = 0; i < n; i++) {
     str += "*";
   }
   return str;
 }
 
 function list(str_arr) {
-  var arr = str_arr.split("\n");
-  var str = "";
-  for (var i = 0; i < arr.length; i++) {
+  let arr = str_arr.split("\n");
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
     str += "<li>" + arr[i] + "</li>";
   }
   return str;
 }
 
 function time_s(hm) {
-  var arr = hm.split(".");
+  let arr = hm.split(".");
   arr = [Number(arr[0]), Number(arr[1])];
-  var str = "";
+  let str = "";
   if (arr[0] === 1) str += arr[0] + " ora";
   else if (arr[0] > 1) str += arr[0] + " ore";
   if (arr[0] > 0) str += " ";
