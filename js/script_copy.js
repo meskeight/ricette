@@ -38,16 +38,15 @@ function time(hm) {
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
-    var fruits = [];
-
     let data = JSON.parse(this.responseText).feed.entry;
+
     for (let i = 0; i < data.length; i++) {
       var r_id = data[i]["gsx$id"]["$t"];
       var r_titolo = data[i]["gsx$titolo"]["$t"];
       var r_difficolta = data[i]["gsx$difficolta"]["$t"];
       var r_tcottura = data[i]["gsx$tcottura"]["$t"];
       var r_categoria = data[i]["gsx$categoria"]["$t"];
-      fruits[i] = [r_id, r_titolo, r_difficolta, r_tcottura, r_categoria];
+
       //if (r_categoria === _getcategory) {
       //}
 
@@ -71,7 +70,6 @@ xmlhttp.onreadystatechange = function () {
         "</td>" +
         "</tr>";
     }
-    console.log(fruits);
   }
 };
 
