@@ -41,23 +41,34 @@ function time_s(hm) {
   return str;
 }
 
+function getById(object, id) {
+  let r = Number();
+  for (let i = 0; i < object.length; i++) {
+    if (object[i]["gsx$id"]["$t"] === id) {
+      r = Number(i);
+      break;
+    }
+  }
+  return r;
+}
+
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let data = JSON.parse(this.responseText).feed.entry;
+    let key = getById(data, _get);
 
-    document.getElementById("titolo").innerHTML =
-      data[_get]["gsx$titolo"]["$t"];
+    document.getElementById("titolo").innerHTML = data[key]["gsx$titolo"]["$t"];
     document.getElementById("difficolta").innerHTML = difficolta(
-      data[_get]["gsx$difficolta"]["$t"]
+      data[key]["gsx$difficolta"]["$t"]
     );
     document.getElementById("tcottura").innerHTML = time_s(
-      data[_get]["gsx$tcottura"]["$t"]
+      data[key]["gsx$tcottura"]["$t"]
     );
     document.getElementById("ingredienti").innerHTML = list(
-      data[_get]["gsx$ingredienti"]["$t"]
+      data[key]["gsx$ingredienti"]["$t"]
     );
     document.getElementById("preparazione").innerHTML =
-      data[_get]["gsx$preparazione"]["$t"];
+      data[key]["gsx$preparazione"]["$t"];
   }
 };
 
