@@ -38,16 +38,22 @@ function time(hm) {
 let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
-    var fruits = [];
+    var fruits = {};
 
     let data = JSON.parse(this.responseText).feed.entry;
     for (let i = 0; i < data.length; i++) {
-      var r_id = data[i]["gsx$id"]["$t"];
-      var r_titolo = data[i]["gsx$titolo"]["$t"];
-      var r_difficolta = data[i]["gsx$difficolta"]["$t"];
-      var r_tcottura = data[i]["gsx$tcottura"]["$t"];
-      var r_categoria = data[i]["gsx$categoria"]["$t"];
-      fruits[i] = [r_id, r_titolo, r_difficolta, r_tcottura, r_categoria];
+      let r_id = data[i]["gsx$id"]["$t"];
+      let r_titolo = data[i]["gsx$titolo"]["$t"];
+      let r_difficolta = data[i]["gsx$difficolta"]["$t"];
+      let r_tcottura = data[i]["gsx$tcottura"]["$t"];
+      let r_categoria = data[i]["gsx$categoria"]["$t"];
+      fruits[i] = {
+        id: Number(r_id),
+        titolo: r_titolo,
+        difficolta: Number(r_difficolta),
+        tcottura: r_tcottura,
+        categoria: r_categoria
+      };
       //if (r_categoria === _getcategory) {
       //}
 
