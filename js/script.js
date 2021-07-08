@@ -9,7 +9,6 @@ for (let i = 0; i < pairs.length; i++) {
 }
 
 let _getcategory = request["c"];
-if (_getcategory === undefined) _getcategory = false;
 
 function time(hm) {
   return hm.replace(".", ":");
@@ -27,7 +26,7 @@ function html_build(obj) {
     obj.categoria +
     "</td>" +
     "<td>" +
-    obj.id +
+    obj.difficolta +
     "</td>" +
     "<td>" +
     time(obj.tcottura) +
@@ -39,7 +38,8 @@ let xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function () {
   if (this.readyState === 4 && this.status === 200) {
     let data = JSON.parse(this.responseText).feed.entry;
-    var recipes = {};
+    let recipes = {};
+
     for (let i = 0; i < data.length; i++) {
       let r_id = data[i]["gsx$id"]["$t"];
       let r_titolo = data[i]["gsx$titolo"]["$t"];
@@ -47,14 +47,17 @@ xmlhttp.onreadystatechange = function () {
       let r_tcottura = data[i]["gsx$tcottura"]["$t"];
       let r_categoria = data[i]["gsx$categoria"]["$t"];
 
-      recipes[i] = {
-        id: Number(r_id),
-        titolo: r_titolo,
-        difficolta: Number(r_difficolta),
-        tcottura: r_tcottura,
-        categoria: r_categoria
-      };
-      html_build(recipes[i]);
+      if (_getcategory === undefined || r_categoria === _getcategory) {
+        recipes[i] = {
+          id: Number(r_id),
+          titolo: r_titolo,
+          difficolta: Number(r_difficolta),
+          tcottura: r_tcottura,
+          categoria: r_categoria
+        };
+
+        html_build(recipes[i]);
+      }
     }
   }
 };
