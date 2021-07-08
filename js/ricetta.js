@@ -58,6 +58,7 @@ xmlhttp.onreadystatechange = function () {
     let key = getById(data, _get);
 
     document.getElementById("titolo").innerHTML = data[key]["gsx$titolo"]["$t"];
+    document.getElementById("image").src = data[key]["gsx$image"]["$t"];
     document.getElementById("difficolta").innerHTML = difficolta(
       data[key]["gsx$difficolta"]["$t"]
     );
