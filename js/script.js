@@ -15,6 +15,7 @@ function time(hm) {
 }
 
 function html_build(obj) {
+  //document.getElementById("console").innerHTML = obj.image;
   document.getElementById("demo").innerHTML +=
     "<tr>" +
     '<td><a href="ricetta.html?id=' +
@@ -22,6 +23,9 @@ function html_build(obj) {
     '">' +
     obj.titolo +
     "</a></td>" +
+    '<td><img src="' +
+    obj.image +
+    '" height="220"></td>' +
     "<td>" +
     obj.categoria +
     "</td>" +
@@ -43,6 +47,7 @@ xmlhttp.onreadystatechange = function () {
     for (let i = 0; i < data.length; i++) {
       let r_id = data[i]["gsx$id"]["$t"];
       let r_titolo = data[i]["gsx$titolo"]["$t"];
+      let r_image = data[i]["gsx$image"]["$t"];
       let r_difficolta = data[i]["gsx$difficolta"]["$t"];
       let r_tcottura = data[i]["gsx$tcottura"]["$t"];
       let r_categoria = data[i]["gsx$categoria"]["$t"];
@@ -51,6 +56,7 @@ xmlhttp.onreadystatechange = function () {
         recipes[i] = {
           id: Number(r_id),
           titolo: r_titolo,
+          image: r_image,
           difficolta: Number(r_difficolta),
           tcottura: r_tcottura,
           categoria: r_categoria
