@@ -23,6 +23,7 @@ function formatTime(seconds) {
     //pad(seconds % 60)
   ].join(":");
 }
+
 function timeSum(arr) {
   return formatTime(timestrToSec(arr[0]) + timestrToSec(arr[1]));
 }
