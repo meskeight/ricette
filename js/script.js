@@ -25,12 +25,15 @@ function html_build(obj) {
     "</a></td>" +
     '<td><img src="' +
     obj.image +
-    '" height="220"></td>' +
+    '" class="thumb" height="220"></td>' +
     "<td>" +
     obj.categoria +
     "</td>" +
     "<td>" +
     obj.difficolta +
+    "</td>" +
+    "<td>" +
+    time(obj.tpreparazione) +
     "</td>" +
     "<td>" +
     time(obj.tcottura) +
@@ -49,6 +52,7 @@ xmlhttp.onreadystatechange = function () {
       let r_titolo = data[i]["gsx$titolo"]["$t"];
       let r_image = data[i]["gsx$image"]["$t"];
       let r_difficolta = data[i]["gsx$difficolta"]["$t"];
+      let r_tpreparazione = data[i]["gsx$tpreparazione"]["$t"];
       let r_tcottura = data[i]["gsx$tcottura"]["$t"];
       let r_categoria = data[i]["gsx$categoria"]["$t"];
 
@@ -58,6 +62,7 @@ xmlhttp.onreadystatechange = function () {
           titolo: r_titolo,
           image: r_image,
           difficolta: Number(r_difficolta),
+          tpreparazione: r_tpreparazione,
           tcottura: r_tcottura,
           categoria: r_categoria
         };
