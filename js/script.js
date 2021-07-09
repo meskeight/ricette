@@ -60,7 +60,7 @@ xmlhttp.onreadystatechange = function () {
           id: Number(r_id),
           titolo: r_titolo,
           image: r_image,
-          difficolta: Number(r_difficolta),
+          difficolta: difficolta(r_difficolta),
           tpreparazione: Time_hm(r_tpreparazione),
           tcottura: Time_hm(r_tcottura),
           categoria: r_categoria

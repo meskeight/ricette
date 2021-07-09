@@ -12,21 +12,15 @@ for (let i = 0; i < pairs.length; i++) {
 let xmlhttp = new XMLHttpRequest();
 let _get = request["id"];
 
-function difficolta(n) {
-  let str = "";
-  for (let i = 0; i < n; i++) {
-    str += "*";
+function getById(object, id) {
+  let r = Number();
+  for (let i = 0; i < object.length; i++) {
+    if (object[i]["gsx$id"]["$t"] === id) {
+      r = Number(i);
+      break;
+    }
   }
-  return str;
-}
-
-function list(str_arr) {
-  let arr = str_arr.split("\n");
-  let str = "";
-  for (let i = 0; i < arr.length; i++) {
-    str += "<li>" + arr[i] + "</li>";
-  }
-  return str;
+  return r;
 }
 
 function time_s(hm) {
@@ -41,15 +35,39 @@ function time_s(hm) {
   return str;
 }
 
-function getById(object, id) {
-  let r = Number();
-  for (let i = 0; i < object.length; i++) {
-    if (object[i]["gsx$id"]["$t"] === id) {
-      r = Number(i);
-      break;
-    }
+function difficolta(n) {
+  switch (Number(n)) {
+    case 0:
+      return "Principiante";
+    case 1:
+      return "Facile";
+    case 2:
+      return "Intermedio";
+    case 3:
+      return "Esperto";
+    default:
+      return "Livello";
   }
-  return r;
+}
+
+/* function difficolta_img(n) {
+  let str = "";
+  for (let i = 0; i < n; i++) {
+    str += "*";
+  }
+  return str;
+} */
+
+function list(elementId, str) {
+  let ul = document.getElementById(elementId);
+
+  let arr = str.split("\n");
+  for (var i = 0; i < arr.length; i++) {
+    //var name = names[i];
+    var li = document.createElement("li");
+    li.innerHTML = arr[i];
+    ul.appendChild(li);
+  }
 }
 
 xmlhttp.onreadystatechange = function () {
@@ -58,18 +76,15 @@ xmlhttp.onreadystatechange = function () {
     let key = getById(data, _get);
 
     document.getElementById("titolo").innerHTML = data[key]["gsx$titolo"]["$t"];
-    document.getElementById("image").src = data[key]["gsx$image"]["$t"];
+    //document.getElementById("image").src = data[key]["gsx$image"]["$t"];
     document.getElementById("difficolta").innerHTML = difficolta(
       data[key]["gsx$difficolta"]["$t"]
     );
     document.getElementById("tcottura").innerHTML = time_s(
       data[key]["gsx$tcottura"]["$t"]
     );
-    document.getElementById("ingredienti").innerHTML = list(
-      data[key]["gsx$ingredienti"]["$t"]
-    );
-    document.getElementById("preparazione").innerHTML =
-      data[key]["gsx$preparazione"]["$t"];
+    list("ingredienti", data[key]["gsx$ingredienti"]["$t"]);
+    list("preparazione", data[key]["gsx$preparazione"]["$t"]);
   }
 };
 

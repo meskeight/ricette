@@ -27,3 +27,18 @@ function formatTime(seconds) {
 function timeSum(arr) {
   return formatTime(timestrToSec(arr[0]) + timestrToSec(arr[1]));
 }
+
+function difficolta(n) {
+  switch (Number(n)) {
+    case 0:
+      return "Principiante";
+    case 1:
+      return "Facile";
+    case 2:
+      return "Intermedio";
+    case 3:
+      return "Esperto";
+    default:
+      return "Livello";
+  }
+}
