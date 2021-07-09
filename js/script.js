@@ -10,10 +10,6 @@ for (let i = 0; i < pairs.length; i++) {
 
 let _getcategory = request["c"];
 
-function time(hm) {
-  return hm.replace(".", ":");
-}
-
 function html_build(obj) {
   //document.getElementById("console").innerHTML = obj.image;
   document.getElementById("demo").innerHTML +=
@@ -33,10 +29,13 @@ function html_build(obj) {
     obj.difficolta +
     "</td>" +
     "<td>" +
-    time(obj.tpreparazione) +
+    timeSum([obj.tpreparazione, obj.tcottura]) +
     "</td>" +
     "<td>" +
-    time(obj.tcottura) +
+    obj.tpreparazione +
+    "</td>" +
+    "<td>" +
+    obj.tcottura +
     "</td>" +
     "</tr>";
 }
@@ -62,8 +61,8 @@ xmlhttp.onreadystatechange = function () {
           titolo: r_titolo,
           image: r_image,
           difficolta: Number(r_difficolta),
-          tpreparazione: r_tpreparazione,
-          tcottura: r_tcottura,
+          tpreparazione: Time_hm(r_tpreparazione),
+          tcottura: Time_hm(r_tcottura),
           categoria: r_categoria
         };
 
