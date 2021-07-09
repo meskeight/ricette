@@ -1,5 +1,43 @@
+* {
+  font-family: "Open Sans";
+}
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  color: orangered;
+}
+.menu_portate a {
+  font-weight: bold;
+  color: white;
+  background-color: cadetblue;
+  padding: 0.5em;
+  margin: 0 1em;
+}
+.container {
+  background-color: khaki;
+  padding: 1em;
+}
+.row {
+  background-color: plum;
+  margin-bottom: 1em;
+  display: block;
+}
+.row h2 {
+  display: inline;
+}
+.row .portata {
+  display: block;
+}
+.row .livello {
+  display: block;
+}
 .thumb {
   width: 160px;
   height: 160px;
   object-fit: cover;
+  background-color: darkmagenta;
+  float: left;
+  margin-right: 20px;
 }

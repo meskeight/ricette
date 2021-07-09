@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -7,68 +7,35 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-    />
+    <title>Ricette</title>
     <!-- Google Fonts Roboto -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
-    <!-- Bootstrap core CSS
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" /> -->
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="css/mdb/mdb.min.css" />
-    <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="css/custom/style.css" />
   </head>
   <body>
-    <div class="container my-5">
-      <div class="row">
+    <div class="header">
+      <h1>Ricette</h1>
+      <div class="menu">
         <p><a href="index.html">home</a></p>
-        <p>
-          <a href="index.html?c=antipasto">antipasti</a> |
-          <a href="index.html?c=primo">primi</a> |
-          <a href="index.html?c=secondo">secondi</a> |
+        <p class="menu_portate">
+          <a href="index.html?c=antipasto">antipasti</a>
+          <a href="index.html?c=primo">primi</a>
+          <a href="index.html?c=secondo">secondi</a>
           <a href="index.html?c=dolce">dolci</a>
         </p>
-        <p id="console"></p>
-        <div class="col-md-7 mb-4 mb-md-0">
-          <!-- Table -->
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>Titolo</th>
-                <th>Immagine</th>
-                <th>Categoria</th>
-                <th>Difficolt&agrave;</th>
-                <th>Tempo totale</th>
-                <th>Tempo di preparazione</th>
-                <th>Tempo di cottura</th>
-              </tr>
-            </thead>
-            <tbody id="demo"></tbody>
-          </table>
-        </div>
       </div>
-      <a href="tutorial.html?id=name">tutorial</a>
     </div>
-    <!-- jQuery -->
-    <script
-      type="text/javascript"
-      src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
-    ></script>
-    <!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
-    <!-- Bootstrap tooltips -->
-    <!-- <script type="text/javascript" src="js/popper.min.js"></script> -->
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb/mdb.min.js"></script>
-    <!-- Your custom scripts -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <div class="container">
+      <div class="row">
+        <h2>Tortelli al vapore</h2>
+        <img class="thumb" src="" width="160" height="160" />
+        <p class="portata">Primo</p>
+        <p class="livello">Intermedio</p>
+      </div>
+    </div>
+    <div class="footer">Ricette</div>
   </body>
 </html>
