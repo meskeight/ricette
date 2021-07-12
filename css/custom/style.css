@@ -1,43 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
 * {
-  font-family: "Open Sans";
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
-a {
-  color: blue;
+:root {
+  --blue: #007bff;
+  --indigo: #b8873d;
+  --purple: #6f42c1;
+}
+body {
+  margin: 0 20px;
+  background-color: #fff;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: lightblue; */
+}
+header .logo {
+  color: black;
+  font-weight: 700;
   text-decoration: none;
+  font-size: 2em;
 }
-a:hover {
-  color: orangered;
+header ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.menu_portate a {
+header ul li {
+  list-style: none;
+  margin-left: 10px;
+}
+header ul li a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: var(--indigo);
+  border-radius: 10px;
+  /* background-color: lightgreen; */
   font-weight: bold;
+}
+header ul li a:hover,
+header ul li a.active {
+  background-color: var(--indigo);
   color: white;
-  background-color: cadetblue;
-  padding: 0.5em;
-  margin: 0 1em;
 }
 .container {
-  background-color: khaki;
-  padding: 1em;
+  margin-top: 110px;
 }
-.row {
-  background-color: plum;
-  margin-bottom: 1em;
-  display: block;
+.container .row {
+  margin: 0 auto;
+  display: inline-block;
+  background-color: wheat;
 }
-.row h2 {
-  display: inline;
-}
-.row .portata {
-  display: block;
-}
-.row .livello {
-  display: block;
-}
-.thumb {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  background-color: darkmagenta;
+.container .row .thumb {
   float: left;
-  margin-right: 20px;
+  background-color: white;
+}
+.container .row .recipe {
+  display: inline;
 }
