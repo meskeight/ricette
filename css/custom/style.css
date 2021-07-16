@@ -2,54 +2,63 @@
 * {
   margin: 0;
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
 }
 :root {
-  --blue: #007bff;
+  --bg: #d6bab9;
   --indigo: #b8873d;
   --purple: #6f42c1;
 }
 body {
   margin: 0 20px;
+  background-color: var(--bg);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.one ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.one li {
+  float: left;
+}
+.one li a {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.one li a:hover,
+.one li a.active {
   background-color: #fff;
 }
-header {
+.one {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  /* background-color: lightblue; */
+  padding: 16px 20px 30px 20px;
+
+  /*/ display: flex;
+  //justify-content: space-between;
+  //align-items: center;
+  //background-color: lightblue;*/
 }
-header .logo {
+.one .logo {
   color: black;
   font-weight: 700;
   text-decoration: none;
   font-size: 2em;
-}
-header ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header ul li {
-  list-style: none;
-  margin-left: 10px;
-}
-header ul li a {
-  text-decoration: none;
-  padding: 6px 15px;
-  color: var(--indigo);
-  border-radius: 10px;
-  /* background-color: lightgreen; */
-  font-weight: bold;
-}
-header ul li a:hover,
-header ul li a.active {
-  background-color: var(--indigo);
-  color: white;
 }
 .container {
   margin-top: 110px;
@@ -57,12 +66,32 @@ header ul li a.active {
 .container .row {
   margin: 0 auto;
   display: inline-block;
-  background-color: wheat;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 12px;
 }
 .container .row .thumb {
   float: left;
   background-color: white;
+  width: 260px;
+  height: 160px;
+  margin-right: 20px;
+  background: #ccc;
 }
 .container .row .recipe {
   display: inline;
+}
+.container .row .recipe a {
+  color: #000;
+  font-size: 1.6em;
+}
+.row .details li {
+  list-style-image: "icons.png";
+  margin: 0.5em 0;
+  padding: 0;
+  overflow: hidden;
+  font-weight: bold;
+}
+.container .row .portata a {
+  color: #007bff;
 }
