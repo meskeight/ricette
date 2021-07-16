@@ -85,13 +85,32 @@ a:hover {
   color: #000;
   font-size: 1.6em;
 }
-.row .details li {
-  list-style-image: "icons.png";
-  margin: 0.5em 0;
+.row .details {
+  list-style-type: none;
+  margin: 0;
   padding: 0;
   overflow: hidden;
-  font-weight: bold;
 }
+.row .details li {
+  background-image: url("https://raw.githubusercontent.com/meskeight/ricette/main/img/icons.png");
+  background-repeat: no-repeat;
+  overflow: hidden;
+  font-weight: bold;
+  line-height: 21px;
+  padding-left: 30px;
+  margin: 0.5em 0;
+}
+.row .details li.portata {
+  background: none;
+  padding-left: 0;
+}
+.row .details li.livello {
+  background-position-y: 0;
+}
+.row .details li.tempo {
+  background-position-y: -21px;
+}
+/*}
 .container .row .portata a {
   color: #007bff;
-}
+} */
