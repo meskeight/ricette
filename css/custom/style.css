@@ -23,55 +23,58 @@ a:hover {
 .sub {
   font-size: 0.7em;
 }
-.header {
+/*.header {
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   width: 100%;
   padding: 16px 30px 30px 30px;
-
-  /*/ display: flex;
-  //justify-content: space-between;
-  //align-items: center;
-  //background-color: lightblue;*/
-}
+}*/
 .header {
-  overflow: hidden;
-  z-index: 10;
-  /* background: #007bff; */
-  position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  padding: 10px 30px;
-  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #6f42c1;
+  margin-bottom: 10px;
+  line-height: 100px;
+}
+.header * {
+  vertical-align: middle;
 }
 .header .logo img {
   text-decoration: none;
   height: 59px;
-  background: #007bff;
-  border: 1px solid #000;
   margin: 0;
   padding: 0;
+  background-color: blanchedalmond;
 }
-/*.one {
-  / display: flex;
-  //justify-content: space-between;
-  //align-items: center;
-  //background-color: lightblue;
-}*/
-.one {
+.header input {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 1.1em;
+  height: 2em;
+  padding: 0.1em 1em;
+}
+.header input:focus {
+  outline: none;
+  background-color: #fff;
+  color: #000;
+}
+.header input#find {
+}
+.menu {
   display: inline-block;
   list-style-type: none;
-  /* margin: 0; */
   padding: 0px;
   margin-bottom: 0px;
   margin-top: 0;
 }
-.one li {
+.menu li {
   float: left;
 }
-.one li a {
+.menu li a {
   display: block;
   color: #000;
   text-align: center;
@@ -80,29 +83,38 @@ a:hover {
   margin-right: 10px;
   border-radius: 10px;
 }
-.one li a:hover,
-.one li a.active {
+.menu li a:hover,
+.menu li a.active {
   background-color: #fff;
 }
 .container {
-  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  background-color: #b8873d;
+  flex-flow: wrap;
+  row-gap: 24px;
+  column-gap: 24px;
+}
+.container > * {
+  flex: 1 1 240px;
 }
 .container .box {
-  margin: 0 auto;
-  margin-bottom: 16px;
-  display: inline-block;
   background-color: #fff;
+  min-width: 220px;
   padding: 12px;
   border-radius: 12px;
-  width: 100%;
 }
 .container .box .thumb {
   float: left;
-  background-color: white;
-  width: 260px;
-  height: 160px;
-  margin-right: 20px;
   background: #ccc;
+  max-width: 100%;
+  min-width: 220px;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 .container .box .recipe {
   display: inline-block;
@@ -110,11 +122,9 @@ a:hover {
 }
 .container .box .recipe h2 {
   margin-bottom: 0.3em;
-  /* font-size: 1.6em; */
 }
 .container .box .recipe h2 a {
   color: #000;
-  /* font-size: 1.6em; */
 }
 .container .box .recipe .portata a {
   color: #007bff;
@@ -123,19 +133,13 @@ a:hover {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 .box .details li {
   background-image: url("https://raw.githubusercontent.com/meskeight/ricette/main/img/icons.png");
   background-repeat: no-repeat;
-  overflow: hidden;
   line-height: 21px;
   padding-left: 38px;
   margin-top: 1em;
-}
-.box .details li.portata {
-  background: none;
-  padding-left: 0;
 }
 .box .details li.livello {
   background-position-y: 0;
