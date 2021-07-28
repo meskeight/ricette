@@ -1,12 +1,10 @@
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   grid-auto-flow: dense;
   grid-gap: 1em;
   margin: 1rem 0;
-}
-.container--fit {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  background: url("../../img/220.png");
 }
 .child {
   background: #82c7eb;
