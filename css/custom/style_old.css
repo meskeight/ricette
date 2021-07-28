@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap");
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+:root {
+  --bg: #d6bab9;
+  --indigo: #b8873d;
+  --purple: #6f42c1;
+}
+body {
+  margin: 0 30px;
+  background-color: var(--bg);
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.sub {
+  font-size: 0.7em;
+}
+/*.header {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px 30px 30px 30px;
+}*/
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #6f42c1;
+  margin-bottom: 10px;
+  height: 60px;
+}
+.header .logo img {
+  text-decoration: none;
+  height: 59px;
+  margin: 0;
+  padding: 0;
+  background-color: blanchedalmond;
+}
+.header form.find {
+  background-color: #b8873d;
+  margin-top: 1em;
+  line-height: 30px;
+  height: 30px;
+}
+.header button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 1.1em;
+  padding: 0.1em 1em;
+  outline: none;
+  width: 3em;
+}
+.header input {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
+  border: none;
+  border-radius: 1.1em 0 0 1.1em;
+  padding: 0.1em 1em;
+  outline: none;
+}
+.header input:focus {
+  background-color: #fff;
+  color: #000;
+}
+.menu {
+  display: inline-block;
+  list-style-type: none;
+  padding: 0px;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+.menu li {
+  float: left;
+}
+.menu li a {
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+.menu li a:hover,
+.menu li a.active {
+  background-color: #fff;
+}
+/* .container {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+} */
+.container {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: row;
+  width: 100%;
+  min-width: 244px;
+  background-color: #b8873d;
+  row-gap: 24px;
+  column-gap: 24px;
+}
+.container > * {
+  flex: 1 1 220px;
+}
+.container .box {
+  background-color: #fff;
+  min-width: 220px;
+  padding: 12px;
+  border-radius: 12px;
+}
+.container .box .thumb {
+  float: left;
+  background: #ccc;
+  max-width: 100%;
+  min-width: 220px;
+  height: 180px;
+  object-fit: cover;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.container .box .recipe {
+  display: inline-block;
+  margin-bottom: 0.6em;
+}
+.container .box .recipe h2 {
+  margin-bottom: 0.3em;
+}
+.container .box .recipe h2 a {
+  color: #000;
+}
+.container .box .recipe .portata a {
+  color: #007bff;
+}
+.box .details {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.box .details li {
+  background-image: url("https://raw.githubusercontent.com/meskeight/ricette/main/img/icons.png");
+  background-repeat: no-repeat;
+  line-height: 21px;
+  padding-left: 38px;
+  margin-top: 1em;
+}
+.box .details li.livello {
+  background-position-y: 0;
+}
+.box .details li.tempo {
+  background-position-y: -21px;
+}
