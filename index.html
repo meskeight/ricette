@@ -13,18 +13,21 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
-    <link rel="stylesheet" href="css/custom/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/custom/style3.css" />
   </head>
   <body>
     <div class="header">
+    
       <a href="home.html" class="logo">
-        <img src="https://raw.githubusercontent.com/meskeight/ricette/main/img/logo.png">
+        <img src="https://raw.githubusercontent.com/meskeight/ricette/main/img/ricette_logo.svg" alt="ricette_logo">
       </a>
-      <form class="find">
-        <input type="text" id="find" value="cerca">
-        <button>cerca</button>
+      <form class="search-bar">
+        <input type="text" class="search-bar__input" id="find" placeholder="cerca..." name="search"aria-label="submit search">
+        <button class="search-bar__submit" type="submit"><i class="fa fa-search" aria-label="submit search"></i></button>
       </form>
     </div>
+    
     <ul class="menu">
       <li><a href="#">proponimi</a></li>
       <li><a href="index.html?c=antipasto" class="active">antipasti</a></li>
@@ -32,14 +35,16 @@
       <li><a href="index.html?c=secondo">secondi</a></li>
       <li><a href="index.html?c=dolce">dolci</a></li>
     </ul>
+
     <div class="container">
+
       <div class="box">
+        <img class="thumb" src="https://img.freepik.com/free-vector/flat-geometric-background_23-2148957201.jpg?size=626&ext=jpg" />
         <div class="recipe">
           <h2><a href="#">Tortelli al vapore</a></h2>
           <p class="portata"><a href="#"># Primo</a></p>
         </div>
         <div class="recipe_det">
-          <img class="thumb" src="https://img.freepik.com/free-vector/flat-geometric-background_23-2148957201.jpg?size=626&ext=jpg" />
           <ul class="details">
             <li class="livello">livello: intermedio</li>
             <li class="tempo">1 ora e 30 minuti
@@ -48,13 +53,14 @@
           </ul>
         </div>
       </div>
+
       <div class="box">
+        <img class="thumb" src="https://i.pinimg.com/736x/7d/e8/0d/7de80d4415bd77d9b7e6feb28b618864.jpg" />
         <div class="recipe">
           <h2><a href="#">Fusilli alla fiorentina</a></h2>
           <p class="portata"><a href="#"># Secondo</a></p>
         </div>
         <div class="recipe_det">
-        <img class="thumb" src="https://i.pinimg.com/736x/7d/e8/0d/7de80d4415bd77d9b7e6feb28b618864.jpg" />
         <ul class="details">
           <li class="livello">livello: intermedio</li>
           <li class="tempo">1 ora e 30 minuti
@@ -63,13 +69,14 @@
         </ul>
       </div>
       </div>
+
       <div class="box">
+        <img class="thumb" src="https://cdn.pixabay.com/photo/2017/12/29/21/08/background-3048689_1280.jpg" />
         <div class="recipe">
           <h2><a href="#">Tortelli al vapore</a></h2>
           <p class="portata"><a href="#"># Primo</a></p>
         </div>
         <div class="recipe_det">
-        <img class="thumb" src="https://cdn.pixabay.com/photo/2017/12/29/21/08/background-3048689_1280.jpg" />
         <ul class="details">
           <li class="livello">livello: intermedio</li>
           <li class="tempo">1 ora e 30 minuti
@@ -78,11 +85,8 @@
         </ul>
         </div>
       </div>
-      <!-- <img
-        width="600"
-        src="https://raw.githubusercontent.com/meskeight/ricette/main/img/traccia.png"
-      /> -->
     </div>
+    
     <div class="footer">Ricette</div>
   </body>
 </html>

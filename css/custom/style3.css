@@ -18,9 +18,8 @@
 }
 
 :root {
-  --bg: #d6bab9;
-  --indigo: #b8873d;
-  --purple: #6f42c1;
+  --bg: #d8d1d5;
+  --box: #fff;
   --grad_1: rgb(14, 28, 77);
   --grad_1: linear-gradient(
     0deg,
@@ -37,7 +36,7 @@
 }
 body {
   margin: 0 30px;
-  min-width: 500px;
+  /* min-width: 520px; */
   background-color: var(--bg);
 }
 a {
@@ -81,7 +80,7 @@ a:hover {
   border-radius: 18px;
   height: var(--size);
   padding: 0px;
-  background: #fff;
+  background: var(--box);
   margin-top: 1em;
 }
 .search-bar__input {
@@ -109,10 +108,12 @@ a:hover {
 .menu {
   display: flex;
   list-style-type: none;
-  padding: 0;
+  padding: 3px;
   margin: 0 0 10px 0;
   /* margin-bottom: 0px;
   margin-top: 0; */
+  background: var(--box);
+  border-radius: var(--radius);
 }
 .menu li {
   /* float: left; */
@@ -124,11 +125,11 @@ a:hover {
   padding: 8px 16px;
   text-decoration: none;
   margin-right: 10px;
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) - 1.5px);
 }
 .menu li a:hover,
 .menu li a.active {
-  background-color: #fff;
+  background: var(--bg);
 }
 
 .container {
@@ -138,40 +139,45 @@ a:hover {
   grid-gap: 1em;
   /* margin: 0 0 1rem 0; */
 }
-/* .container >*{
-
-} */
-.container .box {
+.box {
   display: block;
   background-color: #fff;
   /*min-width: 220px;*/
-  padding: 12px;
+  /* padding: 12px; */
   border-radius: var(--radius);
 }
-.container .box .recipe {
+.box > * {
+  margin-bottom: 0.8em;
+  /* background: #ddf1a6; */
+}
+/* .box > :last-child {
+  margin-bottom: 0;
+} */
+.box .recipe {
   display: inline-block;
-  margin-bottom: 0.6em;
 }
-.container .box .recipe h2 {
-  margin-bottom: 0.3em;
+.recipe,
+.recipe_det {
+  padding: 0 1em;
 }
-.container .box .recipe h2 a {
+.box .recipe h2 {
+  margin: 0em;
+  padding: 0;
+}
+.box .recipe h2 a {
   color: #000;
 }
-.container .box .recipe .portata a {
+.box .recipe .portata a {
   color: #007bff;
 }
-.recipe_det {
-  /* background: #b8873d; */
-  /* display: block; */
-}
-.recipe_det .thumb {
+.thumb {
   display: block;
   background: #ccc;
   width: 100%;
   min-width: 220px;
   height: 180px;
   object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0;
   /* margin-bottom: 20px; */
 }
 .box .details {
@@ -185,7 +191,6 @@ a:hover {
   background-repeat: no-repeat;
   line-height: 21px;
   padding-left: 38px;
-  margin-top: 1em;
 }
 .box .details li.livello {
   background-position-y: 0;
