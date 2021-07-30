@@ -39,6 +39,7 @@ body {
   /* min-width: 520px; */
   background-color: var(--bg);
 }
+
 a {
   text-decoration: none;
 }
@@ -115,16 +116,15 @@ a:hover {
   background: var(--box);
   border-radius: var(--radius);
 }
-.menu li {
-  /* float: left; */
+.menu li:not(:last-child) {
+  margin-right: 8px;
 }
 .menu li a {
   display: block;
   color: #000;
   text-align: center;
-  padding: 8px 16px;
+  padding: 8px 10px;
   text-decoration: none;
-  margin-right: 10px;
   border-radius: calc(var(--radius) - 1.5px);
 }
 .menu li a:hover,
@@ -197,4 +197,13 @@ a:hover {
 }
 .box .details li.tempo {
   background-position-y: -21px;
+}
+
+@media (max-width: 360px) {
+  body {
+    margin: 0 20px;
+  }
+  .header .logo img {
+    height: 34px;
+  }
 }
